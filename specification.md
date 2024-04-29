@@ -18,7 +18,7 @@ JSON REST API
 
 ### methods
 
-#### list all countries
+#### list all countries => get contries
 
 - country data object
     * country name
@@ -29,15 +29,15 @@ JSON REST API
 - filtering
     * currency
 
-#### get [single] country
+#### delete countries => delete countries
+
+soft delete
+
+#### get [single] country => get country
 
 matching on criterion
 - alpha 2 code
 - alpha 3 code
-
-#### delete countries
-
-soft delete
 
 ### sample data
 
