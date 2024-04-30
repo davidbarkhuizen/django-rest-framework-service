@@ -18,7 +18,7 @@ JSON REST API
 
 ### methods
 
-#### list all countries => get contries
+#### list all countries => get all countries
 
 - country data object
     * country name
