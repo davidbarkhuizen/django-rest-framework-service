@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from rest_api.countries.models import Country, Currency
+from countries.models import Country, Currency
 
 class CurrencySerializer(serializers.ModelSerializer):
     class Meta:
