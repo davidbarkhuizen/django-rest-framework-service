@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+echo "docker_entrypoint started..."
+
+# while true
+# do
+#     sleep 1
+# done
+
+cd /server
+
+. .venv/bin/activate
+echo "$(which python)"
+
+python rest_api/manage.py runserver 0.0.0.0:8000

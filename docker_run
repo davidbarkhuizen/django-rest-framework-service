@@ -1,0 +1,6 @@
+#! /usr/bin/env bash
+
+docker container stop countries_service
+docker container prune --force 
+
+docker run --name countries_service -p 8000:8000 -d countries_service:latest

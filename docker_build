@@ -1,0 +1,4 @@
+#! /usr/bin/env bash
+
+export BUILDKIT_PROGRESS=plain
+docker build -t countries_service:latest -f docker/Dockerfile .
