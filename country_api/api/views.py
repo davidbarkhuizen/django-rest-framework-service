@@ -1,6 +1,6 @@
 
 
-from rest_framework import permissions, viewsets
+from rest_framework import viewsets
 
 from country_api.api.models import Country
 from country_api.api.serializers import CountrySerializer

@@ -5,7 +5,7 @@ class Currency(models.Model):
 
     scale = models.IntegerField(validators=[MinValueValidator(0)])
     alpha3 = models.CharField(length = 3, null=False, blank=False)
-    numeric3 = models.CharField(length = 3, null=False, blank=False)
+    numeric3 = models.CharField(length = 3, null=False)
     name = models.CharField(max_length = 100, null=False, blank=False)
 
     def __str__(self):
