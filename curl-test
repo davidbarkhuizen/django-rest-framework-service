@@ -1,7 +1,13 @@
 #! /usr/bin/env bash
 
+# curl \
+#     -H  'Accept: application/json; indent=4' \
+#     http://localhost:8000/countries/
+
+# echo
+
 curl \
     -H  'Accept: application/json; indent=4' \
-    http://localhost:8000/countries/
+    http://localhost:8000/countries/?currency=gbp
 
 echo

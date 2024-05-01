@@ -5,7 +5,7 @@ from django.db import migrations
 def populate_countries(apps, schema_editor):
     Country = apps.get_model('countries', 'Country')
 
-    raw_countries = [
+    raw_data = [
         { 'name': 'united kingdom', 'alpha2': 'gb', 'alpha3': 'gbr', 'number3': '826', 'currencies': [ 'gbp', 'usd' ]},
         { 'name': 'south africa', 'alpha2': 'za', 'alpha3': 'zaf', 'number3': '710', 'currencies': [ 'zar', 'usd' ]},
         { 'name': 'eswatini', 'alpha2': 'sz', 'alpha3': 'swz', 'number3': '748', 'currencies': [ 'zar', 'usd', 'szl', 'mzn' ]},
@@ -13,7 +13,7 @@ def populate_countries(apps, schema_editor):
         { 'name': 'zimbabwe', 'alpha2': 'zw', 'alpha3': 'zwe', 'number3': '716', 'currencies': [ 'zar', 'usd', 'zwl' ]},
     ]
 
-    for raw in raw_countries:
+    for raw in raw_data:
         country = Country(
             name=raw['name'],
             alpha2=raw['alpha2'],
