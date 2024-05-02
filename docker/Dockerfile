@@ -17,4 +17,4 @@ FROM intermediate as final
 
 EXPOSE 8000
 
-ENTRYPOINT [ "/server/docker_entrypoint" ]
+ENTRYPOINT [ "/server/entrypoint" ]
