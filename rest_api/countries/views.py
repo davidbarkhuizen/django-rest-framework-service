@@ -15,7 +15,7 @@ class CountryViewSet(viewsets.ModelViewSet):
             matching_currency = matching_currency.lower()
                 
         if matching_currency:
-            query = query.filter(currencies__contains=matching_currency)
+            query = query.filter(currencies__alpha3=matching_currency)
 
         query = query.order_by('-alpha2')
         
