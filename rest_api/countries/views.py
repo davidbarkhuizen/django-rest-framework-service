@@ -12,8 +12,6 @@ class CountryViewSet(viewsets.ModelViewSet):
     filter_backends = [filters.SearchFilter, DjangoFilterBackend]
     filterset_fields = [ 'currencies__alpha3' ]
 
-    #search_fields = [ 'currencies_alpha3' ]
-
     def get_queryset(self):
 
         query = Country.objects.exclude(deleted_date__isnull=False)
@@ -22,11 +20,16 @@ class CountryViewSet(viewsets.ModelViewSet):
 
         return query
 
-    def retrieve(self, request, pk=None):
+    def retrieve(self, request, pk):
+
+        if len(pk) not in [2, 3]:
+            return Response(status = 400) # bad request
+
+        target = Country.objects.get(alpha2=pk) if len(pk) == 2 else Country.objects.get(alpha3=pk)
                 
         return Response(
             CountrySerializer(
-                Country.objects.get(pk=pk)
+                target
             ).data
         )   
 
