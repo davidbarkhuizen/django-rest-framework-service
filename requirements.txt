@@ -15,6 +15,10 @@ django-filter==24.2
     # via -r requirements.in
 djangorestframework==3.15.1
     # via -r requirements.in
+marshmallow==3.21.2
+    # via -r requirements.in
+packaging==24.0
+    # via marshmallow
 sqlparse==0.5.0
     # via django
 typing-extensions==4.11.0
