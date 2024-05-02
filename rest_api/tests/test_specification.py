@@ -41,4 +41,19 @@ class TestOverallServiceSpecification(TestCase):
         response = self.client.get(url)
         self.assertTrue(alpha3 == response.data['alpha3'])
 
+    def test_the_interface_allowing_soft_deletion_of_countries(self):
 
+        alpha2 = 'za'
+        get_url = f'{PATH_ROOT}{alpha2}/'
+
+        response = self.client.get(get_url)
+        self.assertTrue(response.status_code == 200)
+
+        id = response.data['id']
+        delete_url = f'{PATH_ROOT}{id}/'
+
+        response = self.client.delete(delete_url)
+        self.assertTrue(response.status_code == 204)
+
+        response = self.client.get(get_url)
+        self.assertTrue(response.data['deleted_date'] is not None)
