@@ -11,7 +11,7 @@ WORKDIR /server
 
 COPY . /server
 
-RUN . docker/build_intermediate.sh
+RUN . docker/configure_python_venv.sh
 
 FROM intermediate as final
 
