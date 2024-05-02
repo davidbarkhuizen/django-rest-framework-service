@@ -18,8 +18,6 @@ def populate_countries(apps, schema_editor):
 
     for raw in raw_data:
 
-        print(raw['currencies'])
-
         country = Country(
             name=raw['name'],
             alpha2=raw['alpha2'],

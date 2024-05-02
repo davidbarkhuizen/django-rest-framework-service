@@ -13,6 +13,6 @@ class CountrySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Country
-        fields = ['alpha2', 'alpha3', 'name', 'currencies']
+        fields = [ 'id', 'alpha2', 'alpha3', 'name', 'currencies', 'deleted_date']
     
     currencies = CurrencySerializer(read_only=True, many=True)

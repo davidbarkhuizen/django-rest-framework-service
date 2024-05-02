@@ -4,6 +4,10 @@ echo "get all countries"
 curl -H  'Accept: application/json; indent=4' http://localhost:8000/countries/
 echo
 
+echo "get couuntry by id"
+curl -H  'Accept: application/json; indent=4' http://localhost:8000/countries/1/
+echo
+
 echo "get countries with currency"
 
 echo "currency=gbp"
@@ -12,4 +16,12 @@ echo
 
 echo "currency=zar"
 curl -H  'Accept: application/json; indent=4' http://localhost:8000/countries/?currency=zar
+echo
+
+echo "delete country for id = 1"
+curl -X "DELETE" -H  'Accept: application/json; indent=4' http://localhost:8000/countries/1/
+echo
+
+echo "get country by id = 1"
+curl -H  'Accept: application/json; indent=4' http://localhost:8000/countries/1/
 echo

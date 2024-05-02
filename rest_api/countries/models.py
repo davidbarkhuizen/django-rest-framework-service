@@ -19,7 +19,7 @@ class Country(models.Model):
     alpha2 = models.CharField(max_length=2, validators=[MinLengthValidator(2), alpha_only])
     alpha3 = models.CharField(max_length=3, validators=[MinLengthValidator(3), alpha_only])
     currencies = models.ManyToManyField(Currency, through='CountryCurrencies')
-    deleted_date = models.BooleanField(default=None, null=True)
+    deleted_date = models.DateTimeField(default=None, null=True)
     name = models.CharField(max_length = 100)
     numeric3 = models.CharField(max_length=3, validators=[MinLengthValidator(3), numeric_only])
 
