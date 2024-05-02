@@ -29,3 +29,16 @@ class TestOverallServiceSpecification(TestCase):
         self.assertTrue(len(response.data) == 1)
         self.assertTrue(alpha3 in response.data[0]['currencies'])
 
+    def test_that_get_single_country_based_upon_alpha2(self):
+        alpha2 = 'za'
+        url = f'{PATH_ROOT}{alpha2}/'
+        response = self.client.get(url)
+        self.assertTrue(alpha2 == response.data['alpha2'])
+
+    def test_that_get_single_country_based_upon_alpha3(self):
+        alpha3 = 'zaf'
+        url = f'{PATH_ROOT}{alpha3}/'
+        response = self.client.get(url)
+        self.assertTrue(alpha3 == response.data['alpha3'])
+
+
